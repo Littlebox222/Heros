@@ -11,7 +11,13 @@
 @implementation Hero
 
 @synthesize heroName = _heroName;
-@synthesize level = _level;
+@synthesize heroDetial = _heroDetial;
+@synthesize heroLevel = _heroLevel;
+@synthesize heroExperience = _heroExperience;
+@synthesize levelExperience = _levelExperience;
+@synthesize heroPrice = _heroPrice;
+@synthesize skillPoint = _skillPoint;
+@synthesize usedSkillPoint = _usedSkillPoint;
 
 @synthesize physique = _physique;
 @synthesize externalWork = _externalWork;
@@ -26,10 +32,24 @@
 @synthesize criticalShield = _criticalShield;
 
 @synthesize heroState = _heroState;
+@synthesize heroPotential = _heroPotential;
+
+@synthesize relationshipList = _relationshipList;
+@synthesize equipmentList = _equipmentList;
+@synthesize skillList = _skillList;
+@synthesize acupointList = _acupointList;
+@synthesize practiceValueList = _practiceValueList;
 
 - (void)dealloc {
     
     [_heroName release];
+    [_heroDetial release];
+    
+    [_relationshipList release];
+    [_equipmentList release];
+    [_skillList release];
+    [_acupointList release];
+    [_practiceValueList release];
     
     [super dealloc];
 }
@@ -39,9 +59,9 @@
     if (self = [super init]) {
         
         self.heroName = name;
-        self.level = 1;
+        self.heroLevel = 1;
 
-        NSLog(@"~ %@", self.heroName);
+        NSLog(@"~ %@ 等级 %d", self.heroName, self.heroLevel);
     }
     
     return self;
